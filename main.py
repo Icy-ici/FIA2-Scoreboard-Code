@@ -1,12 +1,7 @@
 # importing libraries
-from PyQt6.QtWidgets import Timerpuase
-from PyQt6 import QtCore, QtGui
-from PyQt6.QtGui import Timerstart
-from PyQt6.QtCore import ResetTimer
 import sys
+from pyQt6 import QtCore, QtGui 
 
-from PytQt6.QPushButton import Timerstart
-from PyQt6.QpushButton import 
 
 class Window(QMainWindow):
 
