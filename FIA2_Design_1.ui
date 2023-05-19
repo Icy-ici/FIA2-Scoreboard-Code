@@ -274,6 +274,39 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>180</y>
+      <width>281</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>440</y>
+      <width>104</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>440</y>
+      <width>104</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>team1background</zorder>
    <zorder>Team2Score</zorder>
    <zorder>Team1Score</zorder>
@@ -292,6 +325,9 @@ p, li { white-space: pre-wrap; }
    <zorder>Timerpause</zorder>
    <zorder>team2background</zorder>
    <zorder>lcdNumber</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>comboBox_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

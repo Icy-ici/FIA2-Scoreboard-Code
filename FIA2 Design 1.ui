@@ -264,7 +264,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber">
+   <widget class="QLCDNumber" name="seccondsLabel">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -291,7 +291,7 @@ p, li { white-space: pre-wrap; }
    <zorder>Timerstart</zorder>
    <zorder>Timerpause</zorder>
    <zorder>team2background</zorder>
-   <zorder>lcdNumber</zorder>
+   <zorder>seccondsLabel</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
