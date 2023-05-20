@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLCDNumber" name="Team2Score">
+   <widget class="QLCDNumber" name="team2ScoreLabel">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -39,7 +39,7 @@
      <number>3</number>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="Team1Score">
+   <widget class="QLCDNumber" name="team1ScoreLabel">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -52,7 +52,7 @@
      <number>3</number>
     </property>
    </widget>
-   <widget class="QTextEdit" name="Team1Name">
+   <widget class="QTextEdit" name="team1name">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -89,7 +89,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:72pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ResetTimer">
+   <widget class="QPushButton" name="resetTimerButton">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -102,7 +102,7 @@ p, li { white-space: pre-wrap; }
      <string>Reset Timer</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ResetScores">
+   <widget class="QPushButton" name="resetScoresButton">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -115,7 +115,7 @@ p, li { white-space: pre-wrap; }
      <string>Reset Scores</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ResetAll">
+   <widget class="QPushButton" name="resetAllButton">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -128,7 +128,7 @@ p, li { white-space: pre-wrap; }
      <string>Reset All</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="add1team1">
+   <widget class="QPushButton" name="team1Add1Button">
     <property name="geometry">
      <rect>
       <x>130</x>
@@ -141,7 +141,7 @@ p, li { white-space: pre-wrap; }
      <string>+1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="add2team1">
+   <widget class="QPushButton" name="team1Add2Button">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -154,7 +154,7 @@ p, li { white-space: pre-wrap; }
      <string>+2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="minus1team1">
+   <widget class="QPushButton" name="team1SubtractButton">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -167,7 +167,7 @@ p, li { white-space: pre-wrap; }
      <string>-1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="add2team2">
+   <widget class="QPushButton" name="team2Add2Button">
     <property name="geometry">
      <rect>
       <x>850</x>
@@ -180,7 +180,7 @@ p, li { white-space: pre-wrap; }
      <string>+2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="add1team2">
+   <widget class="QPushButton" name="team2Add1Button">
     <property name="geometry">
      <rect>
       <x>770</x>
@@ -193,7 +193,7 @@ p, li { white-space: pre-wrap; }
      <string>+1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="minus1team2">
+   <widget class="QPushButton" name="team2SubtractButton">
     <property name="geometry">
      <rect>
       <x>690</x>
@@ -206,7 +206,7 @@ p, li { white-space: pre-wrap; }
      <string>-1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Timerstart">
+   <widget class="QPushButton" name="startButton">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -219,7 +219,7 @@ p, li { white-space: pre-wrap; }
      <string>Start Timer</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Timerpause">
+   <widget class="QPushButton" name="pauseButton">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -264,7 +264,7 @@ p, li { white-space: pre-wrap; }
      <string/>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber">
+   <widget class="QLCDNumber" name="clockLabel">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -272,19 +272,6 @@ p, li { white-space: pre-wrap; }
       <width>421</width>
       <height>171</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>180</y>
-      <width>281</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
@@ -307,27 +294,54 @@ p, li { white-space: pre-wrap; }
      </rect>
     </property>
    </widget>
+   <widget class="QPushButton" name="addMinuteButton">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>180</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Minuets</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addSecondButton">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>180</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Secconds</string>
+    </property>
+   </widget>
    <zorder>team1background</zorder>
-   <zorder>Team2Score</zorder>
-   <zorder>Team1Score</zorder>
-   <zorder>Team1Name</zorder>
+   <zorder>team2ScoreLabel</zorder>
+   <zorder>team1ScoreLabel</zorder>
+   <zorder>team1name</zorder>
    <zorder>Team2Name</zorder>
-   <zorder>ResetTimer</zorder>
-   <zorder>ResetScores</zorder>
-   <zorder>ResetAll</zorder>
-   <zorder>add1team1</zorder>
-   <zorder>add2team1</zorder>
-   <zorder>minus1team1</zorder>
-   <zorder>add2team2</zorder>
-   <zorder>add1team2</zorder>
-   <zorder>minus1team2</zorder>
-   <zorder>Timerstart</zorder>
-   <zorder>Timerpause</zorder>
+   <zorder>resetTimerButton</zorder>
+   <zorder>resetScoresButton</zorder>
+   <zorder>resetAllButton</zorder>
+   <zorder>team1Add1Button</zorder>
+   <zorder>team1Add2Button</zorder>
+   <zorder>team1SubtractButton</zorder>
+   <zorder>team2Add2Button</zorder>
+   <zorder>team2Add1Button</zorder>
+   <zorder>team2SubtractButton</zorder>
+   <zorder>startButton</zorder>
+   <zorder>pauseButton</zorder>
    <zorder>team2background</zorder>
-   <zorder>lcdNumber</zorder>
-   <zorder>horizontalSlider</zorder>
+   <zorder>clockLabel</zorder>
    <zorder>comboBox</zorder>
    <zorder>comboBox_2</zorder>
+   <zorder>addMinuteButton</zorder>
+   <zorder>addSecondButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
