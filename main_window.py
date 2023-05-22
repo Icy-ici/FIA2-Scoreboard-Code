@@ -1,12 +1,15 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.uic import loadUi
-from PyQt6.QtCore import QTimer
+from PyQt6.QtCore import QTimer, QUrl
+from PyQt6.QtMultimedia import QSoundEffect
+import time
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        loadUi("FIA2_Design_1.ui", self)  
+        loadUi("FIA2_Design.ui", self)  
 
          # Connect buttons to their respective functions
         self.resetScoresButton.clicked.connect(self.reset_scores)
@@ -27,7 +30,7 @@ class MainWindow(QMainWindow):
         self.team1Score = 0
         self.team2Score = 0
         self.clock = QTimer()
-        self.clock.timeout.connect(self.update_time)
+        self.clock.timeout.connect(self.change_time)
         self.timeInSeconds = 0
 
     def reset_scores(self):
@@ -43,7 +46,39 @@ class MainWindow(QMainWindow):
     def reset_all(self):
         self.reset_scores()
         self.reset_timer()
-      
+
+
+
+    def start_clock(self):
+        self.clock.stop()
+
+        self._start_clock_with_sound()
+
+    def _start_clock_with_sound(self):
+        # Play a sound every seccond before starting 
+        for i in range(1, 4):
+            QTimer.singleShot(i * 1000, self._play_tick_sound)
+            print(i)
+
+        #play a different sound when the timer starts 
+        QTimer.singleShot(4000, self. _play_start_sound)
+
+        #Start the timer
+        QTimer.singleShot(4000, lambda:self.clock.start(1000))
+    
+    def _play_tick_sound(self):
+        tick_sound = QSoundEffect()
+        tick_sound.setSource(QUrl.fromLocalFile("Beep.wav")) 
+        tick_sound.play()
+
+    def _play_start_sound(self):
+        start_sound = QSoundEffect()
+        start_sound.setSource(QUrl.fromLocalFile("Buzzer.wav"))
+        start_sound.play()
+
+    
+    
+    
 
     def change_score(self, team, points):
         if team == 1:
@@ -53,11 +88,15 @@ class MainWindow(QMainWindow):
             self.team2Score += points
             self.team2ScoreLabel.display(self.team2Score)
 
+    def change_time(self):
+        self.timeInSeconds -=1
+        self.update_time()
+
     def update_time(self):
         minutes = self.timeInSeconds // 60
         seconds = self.timeInSeconds % 60
         self.clockLabel.display(f"{minutes:02d}:{seconds:02d}")
-        self.timeInSeconds += 1
+        
 
     def add_minute(self):
         self.timeInSeconds += 60
@@ -67,7 +106,7 @@ class MainWindow(QMainWindow):
         self.timeInSeconds += 1
         self.update_time()
 
-    def start_clock(self):
+    def start_clock2(self):
         self.clock.start(1000)  # Update every second
 
     def pause_clock(self):

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/ryanwpc/Desktop/FIA2 Digital Solutions/FIA2-Scoreboard-Code/FIA2_Design_1.ui'
+# Form implementation generated from reading ui file '/Users/ryanwpc/Desktop/FIA2 Digital Solutions/FIA2-Scoreboard-Code/Old/FIA2_Design_1.ui'
 #
 # Created by: PyQt6 UI code generator 6.5.0
 #
@@ -27,6 +27,7 @@ class Ui_MainWindow(object):
         self.team1ScoreLabel.setObjectName("team1ScoreLabel")
         self.team1name = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.team1name.setGeometry(QtCore.QRect(10, 180, 321, 91))
+        self.team1name.setStyleSheet("font: 75 72pt \"Helvetica Neue\";")
         self.team1name.setObjectName("team1name")
         self.Team2Name = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.Team2Name.setGeometry(QtCore.QRect(630, 180, 321, 91))
@@ -126,12 +127,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.team1name.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:72pt;\">Team 1 </span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:72pt;\"><br /></p></body></html>"))
         self.Team2Name.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -150,5 +145,5 @@ class Ui_MainWindow(object):
         self.team2SubtractButton.setText(_translate("MainWindow", "-1"))
         self.startButton.setText(_translate("MainWindow", "Start Timer"))
         self.pauseButton.setText(_translate("MainWindow", "Pause Timer"))
-        self.addMinuteButton.setText(_translate("MainWindow", "Minuets"))
-        self.addSecondButton.setText(_translate("MainWindow", "Secconds"))
+        self.addMinuteButton.setText(_translate("MainWindow", "Minutes"))
+        self.addSecondButton.setText(_translate("MainWindow", "Seconds"))
