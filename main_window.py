@@ -66,6 +66,7 @@ class MainWindow(QMainWindow):
         #Start the timer
         QTimer.singleShot(4000, lambda:self.clock.start(1000))
     
+
     def _play_tick_sound(self):
         tick_sound = QSoundEffect()
         tick_sound.setSource(QUrl.fromLocalFile("Beep.wav")) 
