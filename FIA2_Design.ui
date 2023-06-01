@@ -115,7 +115,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="team1preset"/>
+           <widget class="QComboBox" name="presetsComboBox"/>
           </item>
          </layout>
         </item>

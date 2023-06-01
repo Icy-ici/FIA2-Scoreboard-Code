@@ -113,6 +113,37 @@ class MainWindow(QMainWindow):
     def pause_clock(self):
         self.clock.stop()
 
+# --------- Presets --------- #
+    def update_presets_dropdown(self):
+        self.presetsComboBox.clear()
+        for preset in self.presets:
+            team1_score = preset['team1Score']
+            team2_score = preset['team2Score']
+            time_in_seconds = preset['timeInSeconds']
+            self.presetsComboBox.addItem(
+                f"{team1_score} |{team2_score} | Time: {time_in_seconds}s"
+
+            )
+
+    def select_preset(self, index):
+        if index >= 0 and index < len(self.presets):
+            preset = self.presets[index]
+            self.team1NameLabel.setText(self.team1Name)
+            self.team2NameLabel.setText(self.team2Name)
+            self.team1Score = preset['team1Score']
+            self.team2Score = preset['team2Score']
+            self.update_score_labels()
+            self.timeInSeconds = preset['timeInSeconds']
+            self.update_time()
+
+    def update_score_labels(self):
+        self.team1ScoreLabel.display(self.team1Score)
+        self.team2ScoreLabel.display(self.team2Score)
+
+
+
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_window = MainWindow()
