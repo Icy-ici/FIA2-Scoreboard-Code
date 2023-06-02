@@ -114,9 +114,6 @@ p, li { white-space: pre-wrap; }
             </property>
            </widget>
           </item>
-          <item>
-           <widget class="QComboBox" name="presetsComboBox"/>
-          </item>
          </layout>
         </item>
        </layout>
@@ -177,6 +174,9 @@ p, li { white-space: pre-wrap; }
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QComboBox" name="presetsComboBox"/>
+         </item>
         </layout>
        </widget>
       </item>
@@ -223,9 +223,6 @@ p, li { white-space: pre-wrap; }
         </item>
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QComboBox" name="team2preset"/>
-          </item>
           <item>
            <widget class="QPushButton" name="team2SubtractButton">
             <property name="text">

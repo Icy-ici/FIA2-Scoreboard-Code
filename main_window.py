@@ -25,6 +25,7 @@ class MainWindow(QMainWindow):
         self.addSecondButton.clicked.connect(self.add_second)
         self.startButton.clicked.connect(self.start_clock)
         self.pauseButton.clicked.connect(self.pause_clock)
+        self.presetsComboBox.currentIndexChanged.connect(self.select_preset)
 
         # Initialize variables
         self.team1Score = 0
@@ -32,6 +33,7 @@ class MainWindow(QMainWindow):
         self.clock = QTimer()
         self.clock.timeout.connect(self.change_time)
         self.timeInSeconds = 0
+        self.presets = []
 
     def reset_scores(self):
         self.team1Score = 0
@@ -44,10 +46,9 @@ class MainWindow(QMainWindow):
         self.update_time()
 
     def reset_all(self):
+        self.create_preset()
         self.reset_scores()
         self.reset_timer()
-
-
 
     def start_clock(self):
         self.clock.stop()
@@ -76,10 +77,6 @@ class MainWindow(QMainWindow):
         start_sound = QSoundEffect()
         start_sound.setSource(QUrl.fromLocalFile("Buzzer.wav"))
         start_sound.play()
-
-    
-    
-    
 
     def change_score(self, team, points):
         if team == 1:
@@ -114,24 +111,25 @@ class MainWindow(QMainWindow):
         self.clock.stop()
 
 # --------- Presets --------- #
+    def create_preset(self):
+        preset = {}
+        preset["Team1Name"] = self.team1name.toPlainText()
+        preset["Team2Name"] = self.Team2Name.toPlainText()
+        preset["timeInSeconds"] = self.timeInSeconds
+        self.presets.append(preset)
+        self.update_presets_dropdown()
+
     def update_presets_dropdown(self):
         self.presetsComboBox.clear()
         for preset in self.presets:
-            team1_score = preset['team1Score']
-            team2_score = preset['team2Score']
             time_in_seconds = preset['timeInSeconds']
-            self.presetsComboBox.addItem(
-                f"{team1_score} |{team2_score} | Time: {time_in_seconds}s"
-
-            )
+            self.presetsComboBox.addItem(f" Time: {time_in_seconds}s")
 
     def select_preset(self, index):
         if index >= 0 and index < len(self.presets):
             preset = self.presets[index]
-            self.team1NameLabel.setText(self.team1Name)
-            self.team2NameLabel.setText(self.team2Name)
-            self.team1Score = preset['team1Score']
-            self.team2Score = preset['team2Score']
+            self.team1name.setText(preset["Team1Name"])
+            self.Team2Name.setText(preset["Team2Name"])
             self.update_score_labels()
             self.timeInSeconds = preset['timeInSeconds']
             self.update_time()
