@@ -3,13 +3,15 @@ from PyQt6.QtWidgets import QApplication, QMainWindow
 from PyQt6.uic import loadUi
 from PyQt6.QtCore import QTimer, QUrl
 from PyQt6.QtMultimedia import QSoundEffect
+from PyQt6.QtGui import QPixmap
 import time
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
-        loadUi("FIA2_Design.ui", self)  
+        loadUi("FIA2_Design.ui", self) 
+        
 
          # Connect buttons to their respective functions
         self.resetScoresButton.clicked.connect(self.reset_scores)
@@ -34,6 +36,8 @@ class MainWindow(QMainWindow):
         self.clock.timeout.connect(self.change_time)
         self.timeInSeconds = 0
         self.presets = []
+
+   
 
     def reset_scores(self):
         self.team1Score = 0

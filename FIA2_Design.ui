@@ -28,7 +28,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLCDNumber" name="clockLabel"/>
+       <widget class="QLCDNumber" name="clockLabel">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(64, 77, 84);</string>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="team2background">
@@ -139,6 +143,9 @@ p, li { white-space: pre-wrap; }
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
             <widget class="QPushButton" name="startButton">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(33, 255, 6);</string>
+             </property>
              <property name="text">
               <string>Start Timer</string>
              </property>
@@ -146,6 +153,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item>
             <widget class="QPushButton" name="pauseButton">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(252, 1, 7);</string>
+             </property>
              <property name="text">
               <string>Pause Timer</string>
              </property>
